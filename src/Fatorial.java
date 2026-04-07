@@ -13,10 +13,16 @@ public class Fatorial{
         long resposta = n;
         if (resposta < 0 ) return -1;
         else if (resposta == 0 || resposta == 1) return 1;
-        for (int i = n - 1; i > 0; i--) {
+        for (int i = n - 1; i > 1; i--) {
             resposta = resposta * i;
 
         }
         return resposta;
+    }
+
+    public long calculoRecursivo(int n) {
+        if (n < 0) return -1;
+        else if (n == 0 || n == 1) return 1;
+        else return (n * calculoRecursivo(n - 1));
     }
 }
